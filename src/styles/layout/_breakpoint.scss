@@ -1,0 +1,23 @@
+@import '../abstracts/variables';
+
+/*
+  Shortens the media query setup
+  This mixin uses a breakpoints map and a key in the breakpoint map to set up
+  The breakpoint map is already included by default
+
+  For example, to use mediaqueries for mobile:
+
+  @use mq(mobile) {
+    width: 50px;
+  } 
+
+*/
+@mixin mq($mq-breakpoint-key, $mq-breakpoints: $breakpoints) {
+  @if not map-has-key($map: $mq-breakpoints, $key: $mq-breakpoint-key) {
+    @warn "Warning: `#{$mq-breakpoint-key}` is not a valid breakpoint name.";
+  } @else {
+    @media screen and (min-width: map-get($mq-breakpoints, $mq-breakpoint-key)) {
+      @content;
+    }
+  }
+}

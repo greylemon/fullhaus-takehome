@@ -1,0 +1,24 @@
+@import '../../../../../styles/abstracts/_variables.scss';
+
+.button {
+  padding: 10px 20px;
+  font-size: map-get($map: $font-size, $key: l);
+
+  &__black {
+    color: white;
+    background-color: black;
+    text-transform: uppercase;
+    border: none;
+  }
+
+  &__close {
+    height: 30px;
+    box-sizing: content-box;
+    background-color: unset;
+    border: unset;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,136 @@
+@import '../../../../../styles/abstracts/variables';
+@import '../../../../../styles/layout/breakpoint';
+
+.cart {
+  height: calc(100vh - #{map-get($navigation-size, computer)});
+  width: 0;
+
+  top: map-get($navigation-size, computer);
+  position: fixed;
+  right: 0;
+
+  background-color: white;
+  border: 1px solid black;
+  box-sizing: border-box;
+
+  transition: width 0.5s;
+
+  &_visible {
+    width: map-get($map: $cart-width, $key: computer);
+
+    @include mq(mobile) {
+      width: map-get($map: $cart-width, $key: mobile);
+    }
+
+    @include mq(tablet) {
+      width: map-get($map: $cart-width, $key: tablet);
+    }
+
+    @include mq(computer) {
+      width: map-get($map: $cart-width, $key: computer);
+    }
+  }
+}
+
+.total {
+  display: flex;
+  justify-content: space-between;
+  font-family: Montserrat;
+  font-size: 36px;
+}
+
+.cartItemImage {
+  width: 200px;
+  height: 100%;
+  margin-right: 20px;
+
+  @include mq(mobile) {
+    width: 80px;
+    margin-right: 10px;
+  }
+
+  @include mq(tablet) {
+    width: 150px;
+  }
+
+  @include mq(computer) {
+    width: 200px;
+  }
+}
+
+.cartContent {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  height: 100%;
+  width: map-get($map: $cart-width, $key: computer);
+  overflow: hidden;
+  box-sizing: border-box;
+  padding: 20px;
+
+  @include mq(mobile) {
+    width: map-get($map: $cart-width, $key: mobile);
+  }
+
+  @include mq(tablet) {
+    width: map-get($map: $cart-width, $key: tablet);
+  }
+
+  @include mq(computer) {
+    width: map-get($map: $cart-width, $key: computer);
+  }
+}
+
+.cartItem {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid black;
+  padding: 20px;
+}
+
+.cartItemsList {
+  height: 100%;
+  overflow-y: auto !important;
+}
+
+.cartDescription {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  text-align: left;
+
+  width: 50%;
+}
+
+.cartItemModel {
+  font-family: Crimson Text;
+  &__productName {
+    font-size: map-get($map: $font-size, $key: m);
+    margin: 0;
+  }
+
+  &__brandName {
+    margin: 0;
+    font-size: map-get($map: $font-size, $key: s);
+  }
+}
+
+.cartItemPrice {
+  &__total {
+    font-weight: bold;
+    margin: 0;
+    font-size: map-get($map: $font-size, $key: s);
+  }
+
+  &__totalBreakdown {
+    margin: 0;
+    font-size: map-get($map: $font-size, $key: s);
+  }
+}
+
+.cartSummary {
+  border-top: 1px solid black;
+  &__button {
+    width: 100%;
+  }
+}

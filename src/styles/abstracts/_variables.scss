@@ -1,0 +1,36 @@
+/**
+  Various variable maps for use in other scss files
+*/
+
+$navigation-size: (
+  mobile: 50px,
+  tablet: 60px,
+  computer: 80px,
+) !default;
+
+$side-margin: (
+  mobile: 20px,
+  tablet: 30px,
+  computer: 40px,
+) !default;
+
+$cart-width: (
+  mobile: 100%,
+  tablet: 400px,
+  computer: 600px,
+) !default;
+
+$breakpoints: (
+  mobile: 0px,
+  tablet: 768px,
+  computer: 1024px,
+) !default;
+
+$font-size: (
+  s: 1rem,
+  m: 1.5rem,
+  l: 2rem,
+  xl: 3rem,
+  xxl: 5rem,
+  xxxl: 8rem,
+);
