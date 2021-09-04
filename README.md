@@ -50,3 +50,5 @@ Allow for only one orders at a time when adding to cart.
 - close cart when clicked away
 
 - complete responsiveness design
+
+- caching cart data
